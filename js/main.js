@@ -7,19 +7,32 @@ for (var i = 0; i < 5; i++) {
   alert(numeroCpu);
   numeriCpu.push(numeroCpu);
 }
+console.log("Numeri cpu " + numeriCpu);
 //dopo 30 secondi deve partire un prompt alla volta (5)
 var secondi = 3;
 var numeriUtente = [];
+var contaNumero = 0;
 setTimeout(function() {
   for (var i = 0; i < 5; i++) {
     // impostare valore random ad ogni allert
     var numeroUtente = parseInt(prompt("Inserisci il numero"));
-    console.log("numero utente alert: " + numeroUtente);
-    alert(numeroUtente);
+    console.log("numero utente : " + numeroUtente);
     numeriUtente.push(numeroUtente);
-  }
-}, secondi * 1000)
-//confrontare se i numeri dell'utente inseriti sono uguali a quelli
-//della cpu
 
-//ritornando quanti numeri sono stati indovinati e quali
+  }
+  console.log("Numeri utente " + numeriUtente);
+  for (var i = 0; i < numeriUtente.length; i++) {
+    var numeroUtenteSalvato = numeriUtente[i];
+    var numeroCpuSalvato = numeriCpu[i];
+    /*console.log("numeri ut save : " + numeroUtenteSalvato);
+    console.log("numeri cpu save : " + numeroCpuSalvato);*/
+    //confrontare se i numeri dell'utente inseriti sono uguali a quelli
+    //della cpu
+    if(numeroUtenteSalvato == numeroCpuSalvato ){
+      console.log("numeri user : " + numeroUtenteSalvato + " numero Cpu : " + numeroCpuSalvato);
+      contaNumero ++;
+    }
+  }
+  //ritornando quanti numeri sono stati indovinati e quali
+  console.log("Numero di volte che ci hai preso: " + contaNumero);
+}, secondi * 1000)
