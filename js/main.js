@@ -17,8 +17,8 @@ setTimeout(function() {
     // impostare valore random ad ogni allert
     var numeroUtente = parseInt(prompt("Inserisci il numero"));
     console.log("numero utente : " + numeroUtente);
+    document.writeln(numeroUtente + "<br>");
     numeriUtente.push(numeroUtente);
-
   }
   console.log("Numeri utente " + numeriUtente);
   for (var i = 0; i < numeriUtente.length; i++) {
@@ -30,9 +30,11 @@ setTimeout(function() {
     //della cpu
     if(numeroUtenteSalvato == numeroCpuSalvato ){
       console.log("numeri user : " + numeroUtenteSalvato + " numero Cpu : " + numeroCpuSalvato);
+      document.writeln("numeri user : " + numeroUtenteSalvato + " numero Cpu : " + numeroCpuSalvato + "<br>");
       contaNumero ++;
     }
   }
   //ritornando quanti numeri sono stati indovinati e quali
   console.log("Numero di volte che ci hai preso: " + contaNumero);
+  document.writeln("Numero di volte che ci hai preso: " + contaNumero);
 }, secondi * 1000)
